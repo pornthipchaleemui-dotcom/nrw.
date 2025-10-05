@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        /* กำหนดการจัดหน้า */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .product-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .product img {
+            width: 200px;
+            height: auto;
+        }
+        .product-info {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .product-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        .product-description {
+            color: #666;
+            margin: 10px 0;
+        }
+        .info {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .buy-now:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-container">
+        <!-- รายการยา 1 -->
+        <div class="product">
+            <img src="https://img.ws.mms.shopee.co.th/th-11134207-7r98y-lnplz39y8bjbce" alt="Product 1">
+            <div class="product-info">
+                <h2 class="product-title">ยาพารา</h2>
+                <p class="product-description">แก้ปวด เป็นไข้</p>
+            </div>
+            <a href="product.html">ข้อมูล</a>
+        </div>
+
+        <!-- รายการยา 2 -->
+        <div class="product">
+            <img src="https://www.gedgoodlife.com/wp-content/uploads/2021/05/img-product-allernix.jpg" alt="Product 2">
+            <div class="product-info">
+                <h2 class="product-title">ยาแก้แพ้</h2>
+                <p class="product-description">แก้แพ้</p>
+            </div>
+            <a href="product.html">ข้อมูล</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

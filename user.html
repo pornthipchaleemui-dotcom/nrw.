@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>แบบลงทะเบียนบุคลากรโรงเรียนหนองเรือวิทยา</title>
+<style>
+    body {
+        background-color: #AFEEEE;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 50px 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        width: 420px;
+        background-color: #F0F8FF;
+        padding: 35px 45px 45px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        background-color: #00CED1;
+        color: #fff;
+        padding: 18px 0;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 35px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        box-shadow: 0 2px 5px rgba(0, 206, 209, 0.6);
+        user-select: none;
+    }
+
+    form > div {
+        margin-bottom: 22px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+        user-select: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #66CDAA;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+        resize: vertical;
+        font-family: inherit;
+        color: #003459;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #00CED1;
+        box-shadow: 0 0 10px #00CED1;
+        background-color: #e0f7f7;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 35px;
+        gap: 12px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 14px 0;
+        border-radius: 8px;
+        border: none;
+        color: white;
+        transition: background-color 0.3s ease;
+        flex: 1;
+        box-shadow: 0 3px 8px rgba(0,206,209,0.6);
+        user-select: none;
+    }
+
+    input[type="submit"] {
+        background-color: #00CED1;
+    }
+    input[type="submit"]:hover {
+        background-color: #009ba1;
+    }
+
+    input[type="reset"] {
+        background-color: #5F9EA0;
+        box-shadow: 0 3px 8px rgba(95,158,160,0.6);
+    }
+    input[type="reset"]:hover {
+        background-color: #436f70;
+    }
+
+    /* Responsive สำหรับมือถือ */
+    @media (max-width: 480px) {
+        .container {
+            width: 90%;
+            padding: 30px 25px 35px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            font-size: 14px;
+            padding: 12px 0;
+        }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <h1>ลงทะเบียนบุคคลากร</h1>
+    <form action="save_staff.php" method="POST">
+        <div>
+            <label for="nameid">เลขประจำตัว</label>
+            <input type="text" id="nameid" name="nameid" placeholder="กรอกเลขประจำตัวบุคลากร" required />
+        </div>
+        <div>
+            <label for="email">อีเมล</label>
+            <input type="email" id="email" name="email" placeholder="กรอกอีเมล" required />
+        </div>
+        <div>
+            <label for="name">ชื่อ-นามสกุล</label>
+            <input type="text" id="name" name="name" placeholder="กรอกชื่อ-นามสกุล" required />
+        </div>
+        <div>
+            <label>การแพ้ยา/อาหาร</label>
+            <div class="radio-group">
+                <label><input type="radio" name="allergy" value="ไม่แพ้ยา" checked> ไม่แพ้ยา</label>
+                <label><input type="radio" name="allergy" value="แพ้ยา"> แพ้ยา</label>
+            </div>
+            <textarea name="allergy_detail" placeholder="กรณีแพ้ กรุณาระบุรายละเอียดเพิ่มเติม"></textarea>
+        </div>
+        <div>
+            <label for="medicine_name">รับยาอะไร</label>
+            <input type="text" id="medicine_name" name="medicine_name" placeholder="กรอกชื่อยา" />
+        </div>
+        <div class="btn-group">
+            <input type="submit" value="บันทึกข้อมูล" />
+            <input type="reset" value="ล้างข้อมูล" />
+        </div>
+    </form>
+</div>
+</body>
+</html>

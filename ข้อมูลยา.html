@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ข้อมูลยาสามัญประจำบ้าน</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap');
+
+  body {
+    font-family: 'Kanit', sans-serif;
+    background: #e8f0fe; /* ฟ้าอ่อน */
+    color: #003459;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* จัดเนื้อหาให้อยู่กลางแนวนอน */
+  }
+
+  .container {
+    width: 100%;
+    max-width: 960px; /* กำหนดความกว้างสูงสุด */
+    background: white;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 15px rgba(0, 87, 184, 0.1);
+  }
+
+  h2 {
+    color: #0057b8; /* น้ำเงินเข้ม */
+    margin-bottom: 10px;
+    border-bottom: 2px solid #a3c4f3; /* เส้นขอบล่างฟ้าอ่อน */
+    padding-bottom: 6px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  thead {
+    background-color: #0057b8; /* น้ำเงินเข้ม */
+    color: white;
+  }
+
+  th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #dbe4f5;
+  }
+
+  tbody tr:hover {
+    background-color: #c9daf8; /* ฟ้าจางเวลาชี้ */
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f0f5ff; /* ฟ้าขาวจาง */
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* ขาว */
+  }
+
+  a {
+    color: #0057b8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #003459;
+    text-decoration: underline;
+  }
+
+  /* Responsive สำหรับมือถือ */
+  @media (max-width: 700px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+      width: 100%;
+    }
+    thead tr {
+      display: none;
+    }
+    tbody tr {
+      margin-bottom: 20px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,87,184,0.1);
+      border-radius: 8px;
+      padding: 14px 12px;
+    }
+    tbody td {
+      border: none;
+      padding-left: 50%;
+      position: relative;
+      text-align: left;
+      white-space: normal;
+    }
+    tbody td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      font-weight: 700;
+      color: #0057b8;
+      white-space: nowrap;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <h2>ยาสามัญประจำบ้าน - ยาทำแผลและใช้ภายนอก</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ชื่อยา</th>
+        <th>สรรพคุณ</th>
+        <th>วิธีใช้</th>
+        <th>ข้อมูลเพิ่มเติม</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="ชื่อยา">เบตาดีน (Betadine)</td>
+        <td data-label="สรรพคุณ">ฆ่าเชื้อแผลและป้องกันการติดเชื้อ</td>
+        <td data-label="วิธีใช้">ทาบริเวณแผลที่ต้องการรักษา</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/betadine-info" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ทิงเจอร์ไอโอดีน</td>
+        <td data-label="สรรพคุณ">รักษาแผลสดและช่วยฆ่าเชื้อ</td>
+        <td data-label="วิธีใช้">ใช้สำลีชุบยาแล้วทาบริเวณแผล</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/iodine-tincture" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">โพวิโดน-ไอโอดีน (Povidone-Iodine)</td>
+        <td data-label="สรรพคุณ">รักษาแผลสดและป้องกันการติดเชื้อ</td>
+        <td data-label="วิธีใช้">ทาแผลสดวันละ 2 ครั้ง</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/povidone-iodine" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ยาไอโซโพรพิล แอลกอฮอล์</td>
+        <td data-label="สรรพคุณ">ทำความสะอาดบาดแผล</td>
+        <td data-label="วิธีใช้">ใช้เช็ดบริเวณรอบแผลเพื่อป้องกันการติดเชื้อ</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/isopropyl-alcohol" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ยาหม่อง</td>
+        <td data-label="สรรพคุณ">บรรเทาอาการปวดเมื่อยและแมลงกัดต่อย</td>
+        <td data-label="วิธีใช้">ทาและนวดบริเวณที่มีอาการ</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/ointment-info" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ซิลเวอร์ ซัลฟาไดอาซีน ครีม</td>
+        <td data-label="สรรพคุณ">รักษาแผลติดเชื้อ ไฟไหม้น้ำร้อนลวก</td>
+        <td data-label="วิธีใช้">ทาบริเวณแผลวันละ 2 ครั้ง</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/silver-sulfadiazine" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ครีมว่านหางจระเข้</td>
+        <td data-label="สรรพคุณ">บรรเทาอาการแสบร้อนจากแผลไฟไหม้</td>
+        <td data-label="วิธีใช้">ทาบริเวณแผลตามต้องการ</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/aloe-vera-cream" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>ยาสามัญประจำบ้าน - ยาใช้ภายในทั่วไป</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ชื่อยา</th>
+        <th>สรรพคุณ</th>
+        <th>วิธีใช้</th>
+        <th>ข้อมูลเพิ่มเติม</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="ชื่อยา">พาราเซตามอล (Paracetamol)</td>
+        <td data-label="สรรพคุณ">ลดไข้และบรรเทาอาการปวด</td>
+        <td data-label="วิธีใช้">รับประทานทุก 4-6 ชั่วโมง ไม่เกินวันละ 4 ครั้ง</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/paracetamol-info" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ยาแก้แพ้ (Antihistamine)</td>
+        <td data-label="สรรพคุณ">บรรเทาอาการแพ้และภูมิแพ้</td>
+        <td data-label="วิธีใช้">รับประทานตามคำแนะนำแพทย์</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/antihistamine-info" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">แอนตาซิน (Antacid)</td>
+        <td data-label="สรรพคุณ">บรรเทาอาการกรดไหลย้อนและแสบท้อง</td>
+        <td data-label="วิธีใช้">รับประทานหลังอาหารตามคำแนะนำ</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/antacid-info" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ยาแก้ท้องเสียผงน้ำตาลเกลือแร่</td>
+        <td data-label="สรรพคุณ">ป้องกันและรักษาภาวะขาดน้ำจากท้องเสีย</td>
+        <td data-label="วิธีใช้">ละลายในน้ำสะอาด 1 แก้ว ดื่มสลับกับน้ำเปล่า</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/oral-rehydration-salts" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ยาธาตุน้ำขาว</td>
+        <td data-label="สรรพคุณ">ลดอาการปวดท้อง ท้องเสีย</td>
+        <td data-label="วิธีใช้">รับประทานตามคำแนะนำบนฉลาก</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/yathat-nam-khao" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ยาแก้ปวดข้อ (NSAIDs)</td>
+        <td data-label="สรรพคุณ">บรรเทาอาการอักเสบและปวดข้อ</td>
+        <td data-label="วิธีใช้">รับประทานตามคำแนะนำแพทย์</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/nsaids-info" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+      <tr>
+        <td data-label="ชื่อยา">ยาคลายกล้ามเนื้อ</td>
+        <td data-label="สรรพคุณ">ช่วยบรรเทาอาการเกร็งและปวดกล้ามเนื้อ</td>
+        <td data-label="วิธีใช้">ใช้ตามคำแนะนำแพทย์หรือเภสัชกร</td>
+        <td data-label="ข้อมูลเพิ่มเติม"><a href="https://exta.co.th/muscle-relaxant" target="_blank" rel="noopener">อ่านเพิ่มเติม</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>

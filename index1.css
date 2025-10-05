@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap');
+
+:root{
+  --primary:#007acc;       /* ปุ่มหลัก / header */
+  --accent:#00b38f;        /* ปุ่มรอง */
+  --deep:#003459;          /* ตัวหนังสือหลัก */
+  --bg-start:#e6f7ff;      /* พื้นหลัง gradient start */
+  --bg-end:#f0fbff;        /* end */
+  --footer-color: #ff6600; /* สีพื้นหลัง footer (ส้ม) */
+  --footer-text: #ffffff;  /* สีตัวอักษร footer */
+  --header-text: #ffffff;  /* สีตัวอักษร header */
+}
+
+/* RESET เบา ๆ */
+*{box-sizing:border-box}
+body, h1, p, a, nav { margin:0; padding:0; font-family: 'Kanit', sans-serif; }
+
+/* พื้นหลังหน้าทั้งหน้า */
+body{
+  min-height:100vh;
+  background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  display:flex;
+  flex-direction:column;
+  color:var(--deep);
+}
+
+/* Header ด้านบน */
+header{
+  padding:14px 20px;
+  background: var(--primary);
+  color: var(--header-text);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+header > div{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* โลโก้/ไอคอน */
+header img{ width:40px; height:40px; object-fit:contain; }
+
+/* ชื่อเว็บ */
+header h1{
+  font-size:1.05rem;
+  font-weight:700;
+  color: var(--header-text);
+  margin-left:4px;
+}
+
+/* เมนูด้านบน (แยกเป็นขวา เมื่อกว้างพอ) */
+nav.ab{
+  margin-left:auto;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+nav.ab a{
+  text-decoration:none;
+  color: var(--header-text);
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  transition:background .18s, transform .12s;
+}
+nav.ab a:hover{
+  background: rgba(255,255,255,0.3);
+  transform:translateY(-2px);
+}
+
+/* === ส่วนกลาง: ทำ container ให้อยู่ตรงกลางทั้งแนวตั้งและแนวนอน === */
+main, .main-wrapper {
+  flex:1 0 auto; /* ให้ส่วนกลางขยาย */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 20px;
+}
+
+/* ถ้าไม่มี main ใน HTML ก็ใช้ body เป็น fallback centering */
+.container{
+  width:100%;
+  max-width:560px;           /* ความกว้างสูงสุดของกล่อง */
+  background: rgba(255,255,255,0.95);
+  border-radius:18px;
+  padding:36px 28px;
+  box-shadow: 0 12px 40px rgba(3,34,63,0.08);
+  text-align:center;
+  margin: 0 auto;
+}
+
+/* แถวไอคอน */
+.icon-row{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:18px;
+}
+.icon-row img{ width:60px; height:60px; object-fit:contain; }
+
+/* หัวข้อหลัก และคำโปรย */
+.textbox{
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--deep);
+  margin-bottom:6px;
+}
+.subtitle{
+  font-size:1rem;
+  color:#27567a;
+  margin-bottom:18px;
+}
+
+/* ข้อความเรียกร้อง (โปรดคลิกเข้าสู่ระบบ) */
+.container b{
+  display:block;
+  font-size:1.05rem;
+  margin-bottom:18px;
+  color:#083047;
+}
+
+/* ปุ่มเข้าสู่ระบบ (จัดให้อยู่กึ่งกลาง) */
+.a{
+  display:inline-block;
+  text-decoration:none;
+  padding:12px 34px;
+  border-radius:30px;
+  font-weight:700;
+  color:white;
+  margin:8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform .12s, box-shadow .12s, background .12s;
+  background: var(--primary);
+}
+.a:hover{ transform:translateY(-4px); box-shadow: 0 16px 40px rgba(0,122,204,0.18) }
+
+/* ปุ่มนักเรียน ใช้สีรอง ถ้าต้องการให้ต่าง */
+a.a + a.a{ background: var(--accent); }
+
+/* ปรับขนาดปุ่มบนมือถือให้พอดี */
+@media (max-width:480px){
+  .container{ padding:28px 18px; margin:12px; }
+  .textbox{ font-size:1.3rem; }
+  .icon-row img{ width:52px; height:52px; }
+  .a{ width:100%; padding:12px; display:block; margin:8px auto; max-width:300px; }
+  nav.ab{ display:none; } /* ซ่อนเมนูบนมือถือ ถ้าต้องการให้มี ให้บอก จะทำเมนู hamburger */
+}
+
+/* Footer */
+footer{
+  padding:12px 20px;
+  text-align:center;
+  color: var(--footer-text);
+  font-weight:600;
+  font-size:0.95rem;
+  background-color: var(--footer-color);
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
